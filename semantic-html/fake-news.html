@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    header,
+    nav,
+    footer {
+      text-align: center;
+    }
+
+    a {
+      /* margin-left: 20px;
+      margin-right: 20px; */
+      margin: 0 20px;
+    }
+
+    main {
+      display: inline-block;
+      width: 70%;
+      vertical-align: top;
+    }
+
+    aside {
+      display: inline-block;
+      width: 25%;
+      vertical-align: top;
+    }
+  </style>
+  <title>Fake Semantic HTML News</title>
+</head>
+
+<body>
+  <header>
+    <!-- The header either for a whole document or for a particular section. -->
+    <h1>Fake Semantic HTML News</h1>
+  </header>
+  <nav>
+    <!-- A set of navigation links. -->
+    <a href="#">Navigate Here</a>
+    <a href="#">Or There</a>
+    <a href="#">Or Everywhere</a>
+    <a href="#">Possibly Nowhere</a>
+    <a href="#" id="src-link">Maybe to the Source Code</a>
+  </nav>
+  <main>
+    <!-- The main content of a whole document. It should not be nested inside <article>, <aside>, <footer>, <header>, or <nav>. -->
+    <h2>Please enjoy reading this article, here in the main section.</h2>
+    <article>
+      <!-- Content that stands on its own and could be distributed in other ways. -->
+      <h3>Semantic HTML Takes Over the World</h3>
+      <section>
+        <!-- Either a section of a document or of an article. -->
+        <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
+          will give you a complete account of the system, and expound the actual teachings of the great explorer of the
+          truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it
+          is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that
+          are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself,
+          because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some
+          great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to
+          obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure
+          that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+        <figure>
+          <!-- A container for a photo, illustration, diagram, graph, etc. -->
+          <img src="https://farm4.staticflickr.com/3078/2784959422_0ea84509b8.jpg" height="200px">
+          <figcaption>
+            <!-- The caption for a <figure>. -->
+            Some might agree with this shirt's opinion on the text here.
+          </figcaption>
+        </figure>
+      </section>
+      <section>
+        <p>
+          <mark>
+            On the other hand,
+          </mark>
+          we denounce with righteous indignation and dislike men who are so beguiled and demoralized
+          by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble
+          that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will,
+          which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy
+          to distinguish. In a <time datetime="1776-07-04 14:30">
+            <!-- A container for a human-readable time or date, with an attribute for a machine-readable time or date. -->
+            free hour
+          </time>, when our power of choice is untrammelled and when nothing prevents our being
+          able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain
+          circumstances and owing to the claims of duty or the obligations of business it will frequently occur that
+          pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters
+          to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures
+          pains to avoid worse pains.
+        </p>
+      </section>
+    </article>
+  </main>
+  <aside>
+    <!-- Typically a sidebar with content related to what is beside. -->
+    <h5>Other stories you might like: </h5>
+    <article>
+      <h4>Semantic HTML fails to cause unnecessary problems</h4>
+      <details>
+        <!-- Info that can be hidden or viewed optionally. -->
+        <summary>
+          <!-- A visible, clickable heading to show/hide the rest of the details. It should be the first child of <details>. -->
+          by Quasi Doublenegativity
+        </summary>
+        <p>This is the best article. Truly unmatched in quality, in accessibility, and in innate charm.</p>
+      </details>
+    </article>
+    <article>
+      <h4>Local News Junkie Semantic HTML Finally Satisfied Her Cravings</h4>
+      <details>
+        <summary>
+          by Unli Kely
+        </summary>
+        <p>She could finally use her favorite screen reader without meaningless divs and spans cluttering it up.</p>
+      </details>
+    </article>
+  </aside>
+  <footer>
+    <!-- The footer either for a whole document or for a particular section. -->
+    Brought to you by the Disassociated Press.
+  </footer>
+  <script>
+    function showSource() {
+      var source = "<html>";
+      source += document.getElementsByTagName('html')[0].innerHTML;
+      source += "</html>";
+      //now we need to escape the html special chars, javascript has escape
+      //but this does not do what we want
+      source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      //now we add <pre> tags to preserve whitespace
+      source = "<pre>" + source + "</pre>";
+      //now open the window and set the source as the content
+      sourceWindow = window; //.open('', 'Source of page', 'height=800,width=800,scrollbars=1,resizable=1');
+      sourceWindow.document.write(source);
+      sourceWindow.document.close(); //close the document for writing, not the window
+      //give source window focus
+      if (window.focus) sourceWindow.focus();
+    }
+
+    document.getElementById('src-link').addEventListener("click", showSource);
+  </script>
+</body>
+
+</html>
